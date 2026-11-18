@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admission</title>
+  </head>
+  <style>
+    :root {
+      --navy: #14305a;
+      --gold: #c99a2e;
+      --paper: #f5f6f8;
+      --ink: #1d2330;
+      --line: #d5d9e0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, serif;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+    a {
+      color: var(--navy);
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 0;
+    }
+
+    /* Header and navigation */
+    header {
+      background: var(--navy);
+      color: #fff;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .menu-button {
+      display: none;
+      background: none;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 4px 0;
+    }
+    nav a:hover,
+    nav a.active {
+      border-bottom: 2px solid var(--gold);
+    }
+
+    /* Hero */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 56px 20px;
+      border-top: 1px solid #2a4777;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: 2.2rem;
+      margin: 0 0 10px;
+    }
+    .hero p {
+      max-width: 520px;
+      margin: 0 0 20px;
+    }
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #1d2330;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      border: 0;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* Content */
+    main {
+      padding: 32px 0 48px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 18px;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .notice {
+      background: #fff8e6;
+      border-left: 4px solid var(--gold);
+      padding: 12px 16px;
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+    th,
+    td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      background: var(--navy);
+      color: #fff;
+    }
+    tr:nth-child(even) td {
+      background: #f0f2f6;
+    }
+
+    /* Forms */
+    form {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 20px;
+      max-width: 520px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 14px 0 4px;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 9px;
+      border: 1px solid #9aa3b2;
+      border-radius: 4px;
+      font: inherit;
+    }
+    input:focus,
+    select:focus,
+    textarea:focus,
+    a:focus,
+    button:focus {
+      outline: 3px solid var(--gold);
+      outline-offset: 2px;
+    }
+    .message {
+      margin-top: 14px;
+      font-weight: bold;
+    }
+    .error {
+      color: #b3261e;
+    }
+    .success {
+      color: #1b6b3a;
+    }
+
+    footer {
+      background: var(--navy);
+      color: #fff;
+      padding: 24px 20px;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #fff;
+    }
+
+    @media (max-width: 640px) {
+      .menu-button {
+        display: block;
+      }
+      nav {
+        display: none;
+        width: 100%;
+      }
+      nav.open {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 10px;
+      }
+      .header-inner {
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="header-inner">
+          <a class="logo" href="https://westernuniversity.edu.kh/kh">
+            Western University
+          </a>
+          <input type="button" value="Menu" class="menu-button" />
+          <ul>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/About.html">About</a></li>
+            <li><a href="/Programs.html">Programs</a></li>
+            <li><a href="/Admissions.html">Admissions</a></li>
+            <li><a href="/Contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <nav>
+        <h1>Admissions</h1>
+
+        <h3>How to apply</h3>
+        <ol>
+          <li>Choose your program</li>
+          <li>Complete the form below</li>
+          <li>Upload your transcripts when we email you</li>
+          <li>Receive your decision within 3 weeks</li>
+        </ol>
+      </nav>
+
+      <form class="success">
+        <label for="fullname">Full name</label>
+        <input type="text" />
+        <label for="email">Email</label>
+        <input type="text" />
+        <label for="program">Program</label>
+        <input type="text" /> <br />
+
+        <label for="https://westernuniversity.edu.kh/kh"
+          >Why do you want study here?</label
+        >
+        <textarea name="" id=""></textarea>
+      </form>
+      <br />
+
+      <input type="button" value="Sumit Application" class="message" />
+      <br /><br />
+
+      <footer>
+        @2026 Western University. Sample website for teaching.
+        <p>
+          <a href="/Contact.html">Contact us</a>|<a href="/Admissions.html">
+            Apply now
+          </a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
